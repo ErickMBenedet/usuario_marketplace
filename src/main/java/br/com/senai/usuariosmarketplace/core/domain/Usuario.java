@@ -1,5 +1,7 @@
 package br.com.senai.usuariosmarketplace.core.domain;
 
+import java.util.Objects;
+
 public class Usuario {
 
 	private String login;
@@ -35,6 +37,22 @@ public class Usuario {
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(login);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Usuario other = (Usuario) obj;
+		return Objects.equals(login, other.login);
+	}
 	
 }
