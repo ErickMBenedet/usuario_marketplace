@@ -1,13 +1,12 @@
 package br.com.senai.usuariosmarketplace;
 
-import br.com.senai.usuariosmarketplace.core.dao.ManagerDb;
 import br.com.senai.usuariosmarketplace.core.service.UsuarioService;
 
 public class InitApp {
 
 	public static void main(String[] args) {
-		ManagerDb.getInstance().getConexao();
-		System.out.println("Conectou");
+		UsuarioService service = new UsuarioService();
+		service.criarPor("Laudelino Martins Cardoso Neto Cabral", "jose1424");
 	}
 
 }
