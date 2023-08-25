@@ -1,19 +1,16 @@
 package br.com.senai.usuariosmarketplace;
 
-import br.com.senai.usuariosmarketplace.core.dao.DaoUsuario;
-import br.com.senai.usuariosmarketplace.core.dao.FactoryDao;
+import br.com.senai.usuariosmarketplace.core.dao.ManagerDb;
 import br.com.senai.usuariosmarketplace.core.domain.Usuario;
 
 public class InitApp {
 
 	public static void main(String[] args) {
-		DaoUsuario dao = FactoryDao.getInstance().getDaoUsuario();
-		Usuario usuario = dao.buscarPor("crocodilo");
-		if (usuario == null) {
-			System.out.println("Não existe usuário");
-		}else {
-			System.out.println(usuario.getNomeCompleto());
-		}
+		ManagerDb.getInstance().getConexao();
+		System.out.println("Conectou");
+		Usuario usuario = new Usuario("jose.silva", "José da Silva", "jose2023");
+		usuario.getLogin();
+		
 	}
 
 }

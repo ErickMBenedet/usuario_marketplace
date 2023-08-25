@@ -2,8 +2,12 @@ package br.com.senai.usuariosmarketplace.core.domain;
 
 import java.util.Objects;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class Usuario {
 
+	@Getter @Setter
 	private String login;
 	private String senha;
 	private String nomeCompleto;
@@ -12,14 +16,6 @@ public class Usuario {
 		this.login = login;
 		this.senha = senha;
 		this.nomeCompleto = nomeCompleto;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
 	}
 
 	public String getSenha() {
