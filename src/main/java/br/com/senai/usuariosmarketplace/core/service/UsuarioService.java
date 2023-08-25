@@ -64,7 +64,7 @@ public class UsuarioService {
 	private List<String> fracionar(String nomeCompleto){
 		List<String> nomeFracionado = new ArrayList<String>();
 		if (nomeCompleto != null && !nomeCompleto.isBlank()) {
-			
+			nomeCompleto = nomeCompleto.trim();
 			String[] partesDoNome = nomeCompleto.split(" ");
 			for (String parte : partesDoNome) {
 				boolean isNaoContemArtigo = !parte.equalsIgnoreCase("de") 
@@ -73,7 +73,7 @@ public class UsuarioService {
 						&& !parte.equalsIgnoreCase("da")
 						&& !parte.equalsIgnoreCase("das");
 				if (isNaoContemArtigo) {
-					nomeFracionado.add(parte.toLowerCase());
+					nomeFracionado.add(parte.toLowerCase().trim());
 				}
 			}
 			
