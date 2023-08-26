@@ -7,6 +7,11 @@
 
 <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 	<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>3.1.2</version>
+    </dependency>
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>

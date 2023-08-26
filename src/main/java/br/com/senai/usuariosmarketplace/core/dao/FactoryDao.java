@@ -1,20 +1,15 @@
 package br.com.senai.usuariosmarketplace.core.dao;
 
-import br.com.senai.usuariosmarketplace.core.dao.postgres.DaoPostgresUsuario;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
+import br.com.senai.usuariosmarketplace.core.dao.postgres.DaoPostgresUsuario;
+@Service
 public class FactoryDao {
 	
-	private static FactoryDao instance;
-	private FactoryDao() {}
-	
+	@Bean
 	public DaoUsuario getDaoUsuario() {
 		return new DaoPostgresUsuario();
 	}
 	
-	public static FactoryDao getInstance() {
-		if(instance == null) {
-			instance = new FactoryDao();
-		}
-		return instance;
-	}
 }
